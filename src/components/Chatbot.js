@@ -3,7 +3,7 @@ import { TextInput, Button, Tile } from '@carbon/react';
 import axios from 'axios';
 import './ChatApp.scss'; // Import the CSS file for styling
 
-const API_KEY = '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';
+const API_KEY ='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';
 
 const ChatApp = () => {
   const [messages, setMessages] = useState([]);
@@ -34,11 +34,11 @@ const ChatApp = () => {
           {
             prompt: inputValue,
             model: "text-davinci-003",
-      temperature: 0,
-      max_tokens: 1000,
-      top_p: 1,
-      frequency_penalty: 0.0,
-      presence_penalty: 0.0,
+            temperature: 0,
+            max_tokens: 1000,
+            top_p: 1,
+            frequency_penalty: 0.0,
+            presence_penalty: 0.0,
           },
           {
             headers: {
@@ -80,7 +80,7 @@ const ChatApp = () => {
         );
           console.log(response);
         const imageURL = response.data.data[0].url;
-        // console.log(imageURL)
+        console.log(imageURL)
         if (imageURL.startsWith('https://')) {
           const botMessage = {
             id: Date.now(),
