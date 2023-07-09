@@ -3,8 +3,8 @@ import { TextInput, Button, Tile } from '@carbon/react';
 import axios from 'axios';
 import './ChatApp.scss'; // Import the CSS file for styling
 
-const API_KEY =process.env.OPEN_AI_API_KEY;
-
+const API_KEY = process.env.REACT_APP_API_KEY;
+console.log(API_KEY)
 const ChatApp = () => {
   const [messages, setMessages] = useState([]);
   const [inputValue, setInputValue] = useState('');
