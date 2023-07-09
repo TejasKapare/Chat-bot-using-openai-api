@@ -3,7 +3,7 @@ import { TextInput, Button, Tile } from '@carbon/react';
 import axios from 'axios';
 import './ChatApp.scss'; // Import the CSS file for styling
 
-const API_KEY ='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';
+const API_KEY =process.env.OPEN_AI_API_KEY;
 
 const ChatApp = () => {
   const [messages, setMessages] = useState([]);
@@ -98,6 +98,7 @@ const ChatApp = () => {
 
   return (
     <div className="chat-container">
+      <div class="main-title">CHAT BOT USING CHAT-GPT</div>
       <div className="chat-messages">
         {messages.map((message) => (
           <Tile
@@ -113,7 +114,8 @@ const ChatApp = () => {
           </Tile>
         ))}
       </div>
-      <form onSubmit={handleSubmit} className="chat-input">
+      {/* <div className='chat-input'> */}
+      <form onSubmit={handleSubmit}>
         <TextInput
           id="messageInput"
           value={inputValue}
@@ -125,6 +127,7 @@ const ChatApp = () => {
         <Button type="submit" size='sm' onClick={generateImageResponse}>Img</Button>
         </div>
       </form>
+      {/* </div> */}
     </div>
   );
 };

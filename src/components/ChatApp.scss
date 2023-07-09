@@ -16,11 +16,12 @@
 }
 .chat-container {
   width: 500px;
-  margin: 0 auto;
+  margin:auto;
+  margin-bottom: 30px;
   background-color: #ddddf7;
   padding: 20px;
   border-radius: 10px;
-  margin-top: 50px;
+  margin-top: 20px;
   overflow-wrap: break-word;
   @include mobile{
     width: 80vw;
@@ -36,15 +37,19 @@
     height: calc(100vh - 200px);
     max-height: calc(100vh - 200px);
     overflow: auto;
+    @include mobile{
+      height: calc(100vh - 300px);
+    max-height: calc(100vh - 300px);
+    }
   }
   
-  .chat-input {
-    flex-grow: 1;
-    padding: 10px;
-    margin-right: 10px;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-  }
+  // .chat-input {
+  //   flex-grow: 1;
+  //   padding: 10px;
+  //   margin-right: 10px;
+  //   border-radius: 10px;
+  //   border: 1px solid #ccc;
+  // }
   
   .message {
     margin-bottom: 10px;
