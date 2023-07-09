@@ -1,0 +1,121 @@
+/* ChatApp.css */
+@mixin mobile{
+  @media screen and (max-width:480px) {
+      @content;
+  }
+}
+@mixin tablet{
+  @media screen and (max-width:768px) {
+      @content;
+  }
+}
+@mixin laptop{
+  @media screen and (max-width:1200px) {
+      @content;
+  }
+}
+.chat-container {
+  width: 500px;
+  margin: 0 auto;
+  background-color: #ddddf7;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 50px;
+  overflow-wrap: break-word;
+  @include mobile{
+    width: 80vw;
+    margin:20px;
+    padding: 15px;
+}
+  }
+  
+  .chat-messages {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    height: calc(100vh - 200px);
+    max-height: calc(100vh - 200px);
+    overflow: auto;
+  }
+  
+  .chat-input {
+    flex-grow: 1;
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  .message {
+    margin-bottom: 10px;
+    padding: 10px;
+  }
+  
+  .user {
+    font-family: "Nunito", sans-serif;
+    background-color: #7b96ec; 
+    text-align: left; 
+    padding: 15px; 
+    display: flex;
+    align-items: center;
+    font-style: italic;
+    @include mobile{
+      font-size: 12px;
+      align-items: flex-start;
+  }
+  }
+  
+  .bot {
+    font-family: "Roboto", sans-serif;
+    background-color: #fffbf5; 
+    text-align: justify; 
+    padding: 15px; 
+    margin-top: 10px; 
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    font-style: italic;
+    overflow-wrap: break-word;
+  }
+  form{
+    display: flex;
+    align-items: center;
+  }
+  button[type="submit"] {
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: #f7efe5;
+    color: #674188;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 2px 2px 10px 5px;
+    @include mobile{
+      font-size: 5px;
+      padding: 5px 10px;
+      display: flex;
+      grid-template-columns: auto;
+      margin: 2px;
+    }
+  }
+  #messageInput{
+    flex-grow: 1;
+    padding: 15px;
+    margin-right: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    @include mobile{
+      padding: 10px;
+      margin-right: 2px;
+      margin-left: 0px;
+      border-radius: 5px;
+    }
+  }
+#btn-container{
+  @include mobile{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom:0px;
+  }
+}
