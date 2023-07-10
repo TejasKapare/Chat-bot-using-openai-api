@@ -97,6 +97,7 @@ const ChatApp = () => {
   };
 
   return (
+    <body>
     <div className="chat-container">
       <div class="main-title">CHAT BOT USING CHAT-GPT</div>
       <div className="chat-messages">
@@ -123,12 +124,13 @@ const ChatApp = () => {
           placeholder='Type Your Message'
         />
         <div id='btn-container'>
-        <Button type="submit" size='sm' onClick={generateTextResponse}>Send</Button>
-        <Button type="submit" size='sm' onClick={generateImageResponse}>Img</Button>
+        <Button type="submit"  onClick={generateTextResponse}>Send</Button>
+        <Button type="submit"  onClick={generateImageResponse}>Img</Button>
         </div>
       </form>
       {/* </div> */}
     </div>
+    </body>
   );
 };
 
